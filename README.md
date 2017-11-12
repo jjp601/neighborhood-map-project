@@ -12,8 +12,8 @@ In order to checkout the Neighborhood Map project complete the following steps:
 Please note that this project uses the Google Maps API, Foursquare API, and Font Awesome soical Icons.
 
 ## Resources
-[Google Maps APIs](https://developers.google.com/maps/)
-[Foursquare Places API](https://developer.foursquare.com/places-api)
-[Font Awesome](http://fontawesome.io/icons/)
-[Knockout.js](http://knockoutjs.com/)
-[jQuery](http://api.jquery.com/)
+* [Google Maps APIs](https://developers.google.com/maps/)
+* [Foursquare Places API](https://developer.foursquare.com/places-api)
+* [Font Awesome](http://fontawesome.io/icons/)
+* [Knockout.js](http://knockoutjs.com/)
+* [jQuery](http://api.jquery.com/)

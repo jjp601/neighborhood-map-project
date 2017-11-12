@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Neighborhood Map</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <a href="#"><i class="fa fa-bars fa-lg" aria-hidden="true"></i></a>
+        <h1>Neighborhood Map</h1>
+        <input id="reset-map" type="button" value="Reset Map">
+    </header>
+    <div id="map"></div>
+    <div id="locations-menu">
+        <div id="search">
+            <input placeholder="Search Map" type="text" id="searchfield" data-bind="textInput: query, valueUpdate: 'keydown'" autocomplete="on">
+            <div id="scroll-bar">
+                <ul data-bind="template: {name: 'place', foreach:places}"></ul>
+                <script type="text/html" id="place">
+                    <div data-bind="visible: visible">
+                        <a href="#" data-bind="attr: {id: id}">
+                            <li>
+                                <h2 data-bind="text: name"></h2>
+                                <p data-bind="text: address"></p>
+                            </li>
+                        </a>
+                    </div>
+                </script>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/lib/knockout-3.2.0.js"></script>
+    <script src="js/app.js"></script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-Rp2K_Kwwt25iEbxX7T9O8hlGEvAXDOM&v=3&callback=initMap">
+    </script>
+</body>
+</html>

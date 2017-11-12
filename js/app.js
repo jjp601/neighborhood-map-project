@@ -170,6 +170,9 @@ function initMap() {
     showPlaces();
 }
 
+function gMapError() {
+    alert('Data from Google Maps failed to load');
+}
 
 // Shows places on the Map
 function showPlaces() {
@@ -319,7 +322,7 @@ var viewModel = {
     query: ko.observable(''),
 };
 
-viewModel.places = ko.dependentObservable(function() {
+viewModel.places = ko.computed(function() {
     var self = this;
     var search = self.query().toLowerCase();
     return ko.utils.arrayFilter(places, function(place) {
@@ -335,22 +338,3 @@ viewModel.places = ko.dependentObservable(function() {
 }, viewModel);
 
 ko.applyBindings(viewModel);
-
-function showNav() {
-    $("#search").show();
-    var scrollerHeight = $("#scroll-bar").height() + 55;
-    if ($(window).height() < 670) {
-        $("#search").animate({
-            height: scrollerHeight - 100,
-        }, 500, function() {
-            $(this).css('height', 'auto').css("max-height", 439);
-        });
-    } else {
-        $("#search").animate({
-            height: scrollerHeight,
-        }, 500, function() {
-            $(this).css('height', 'auto').css("max-height", 700);
-        });
-    }
-    isNavVisible = true;
-}

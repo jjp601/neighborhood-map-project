@@ -296,32 +296,29 @@ $("input").keyup(function() {
     showPlaces();
 });
 
-// Toggle the Search Menu View
-$(".fa-bars").click(function() {
-    $("#locations-menu").slideToggle("slow");
-});
 
-// This function will loop through the places array and displays all the map markers
-function resetMap() {
-    initMap();
-    for (var i = 0; i < places.length; i++) {
-        if (places[i].show === true) {
-            places[i].placeMarker.setMap(map);  
-        } else {
-            places[i].show = true;
-            showPlaces();
-            places[i].placeMarker.setAnimation(google.maps.Animation.DROP);
-        }
-    }    
-};
-
-document.getElementById('reset-map').addEventListener('click', resetMap);
-
-// Filter locations from the Search Menu using Knockout.js to display the places and the list item that matches
 var viewModel = {
     query: ko.observable(''),
+    // This function will loop through the places array and displays all the map markers
+    resetMap : function() {
+        initMap();
+        for (var i = 0; i < places.length; i++) {
+            if (places[i].show === true) {
+                places[i].placeMarker.setMap(map);  
+            } else {
+                places[i].show = true;
+                showPlaces();
+                places[i].placeMarker.setAnimation(google.maps.Animation.DROP);
+            }
+        }
+    },
+    // Toggle the Search Menu View
+    toggleSlide : function() {
+        $("#locations-menu").slideToggle("slow");
+    },
 };
 
+// Filter locations from the Search Menu using Knockout.js to display the places and the list item that matches
 viewModel.places = ko.computed(function() {
     var self = this;
     var search = self.query().toLowerCase();

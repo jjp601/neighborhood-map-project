@@ -178,8 +178,7 @@ var Place = function(data) {
     this.placeMarkerClick = function(PlaceItem) {
         google.maps.event.trigger(self.placeMarker, 'click');
     };
-}
-
+};
 
 var ViewModel = function() {
     var self = this;
@@ -216,7 +215,7 @@ var ViewModel = function() {
             });
         }
     }, self);
-}
+};
 
 // Create and style the map markers for each place
 function makeMarkerIcon(markerColor) {

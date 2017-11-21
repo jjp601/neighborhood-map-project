@@ -11,24 +11,22 @@
     <header>
         <a href="#"><i class="fa fa-bars fa-lg" aria-hidden="true" data-bind="click: toggleSlide"></i></a>
         <h1>Neighborhood Map</h1>
-        <input id="reset-map" type="button" value="Reset Map" data-bind="click: resetMap">
     </header>
     <div id="map"></div>
     <div id="locations-menu">
         <div id="search">
             <input placeholder="Search Map" type="text" id="searchfield" data-bind="textInput: query, valueUpdate: 'afterkeydown'">
             <div id="scroll-bar">
-                <ul data-bind="template: {name: 'place', foreach:places}"></ul>
-                <script type="text/html" id="place">
-                    <div data-bind="visible: visible">
-                        <a href="#" data-bind="attr: {id: id}">
-                            <li>
+                <ul data-bind="foreach: placeSearch">
+                    <div>
+                        <a href="#">
+                            <li id="PlaceItem" data-bind=" click: placeMarkerClick">
                                 <h2 data-bind="text: name"></h2>
                                 <p data-bind="text: address"></p>
                             </li>
                         </a>
                     </div>
-                </script>
+                </ul>    
             </div>
         </div>
     </div>

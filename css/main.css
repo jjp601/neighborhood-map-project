@@ -82,26 +82,6 @@ input:focus {
   border: 2px solid #F14D16;
 }
 
-#reset-map {
-  width: 6%;
-  min-width: 70px;
-  height: 30px;  
-  border-radius: 3px;
-  padding: 5px;
-  font-size: 12px;
-  text-align: center;
-  background-color: #222;
-  border: 1px solid #FFF;
-  color: #FFF;
-  display: inline-block;
-}
- 
-#reset-map:hover {
-  background-color: #F14D16;
-  border: 1px solid #F14D16;
-  color: #FFF;
-}
-
 #locations-menu {
     background: #222;
     border: 1px solid #222;
